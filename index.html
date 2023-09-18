@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+  <link href="styles.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <title>CarbonGo</title>
+</head>
+
+<body>
+  <main class="container">
+    <nav class="navbar navbar-expand-lg bg-body-secondary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">CarbonGo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+          aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="px-4 py-5 front text-center">
+      <img class="d-block mx-auto" src="CarbonGo.png" alt="" width="240" height="240" />
+      <h1 class="display-5 fw-bold text-body-emphasis">Carbon Go</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">
+          Empowering a Greener Tomorrow
+        </p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        </div>
+      </div>
+    </div>
+    <div class="container my-5">
+      <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg section-container">
+        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+          <h1 class="display-4 fw-bold lh-1 text-body-emphasis">Made to Prevent Climate Change</h1>
+          <p class="lead lead-2">
+            Introducing a carbon emissions calculator designed to mitigate the impact of climate change and pave the way
+            for a sustainable future.</p>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="px-4 py-5 front text-center">
+      <div class="form-container">
+        <form id="carbon-calc">
+          <div class="mb-3 row">
+            <label for="staticEmail" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+              <input type="text" readonly class="form-control-plaintext" id="staticEmail"
+                value="Electricity From Grid Form">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">kwh</label>
+            <div class="col-sm-10 d-flex">
+              <input type="number" class="form-control w-50" id="inputPassword" min="0" max="1000000">
+              <button id="calc-btn" class="btn btn-outline-secondary d-inline-flex align-items-center" type="button">
+                Calculate
+                <svg class="bi ms-1" width="20" height="20">
+                  <use xlink:href="#arrow-right-short"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <h1 class="display-5 fw-bold text-body-emphasis">Calculator Results for Electricity from Grid</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">
+          Messages
+        </p>
+        <p class="lead mb-4 result">
+          By using <span id="energynum">0</span> kwh from the grid, you have emmitted <span id="co2num">0</span> kg of
+          CO2
+        </p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        </div>
+      </div>
+    </div>
+    <div class="px-4 py-5 front text-center">
+      <div class="form-container">
+        <form id="carbon-calc">
+          <div class="mb-3 row">
+            <label for="staticEmail" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+              <input type="text" readonly class="form-control-plaintext" id="staticEmail"
+                value="Electricity for Air Travel">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">From(Airport Code)</label>
+            <div class="col-sm-10 d-flex">
+              <input type="text" class="form-control w-50" id="fromAirportCode">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">To(Airport Code)</label>
+            <div class="col-sm-10 d-flex">
+              <input type="text" class="form-control w-50" id="toAirportCode">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Passenger Number</label>
+            <div class="col-sm-10 d-flex">
+              <input type="number" class="form-control w-50" id="passengerNumAir" min="0" max="1000">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Flight Class</label>
+            <div class="col-sm-10 d-flex">
+              <select id="flight-class" class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="first">First Class</option>
+                <option value="business">Business Class</option>
+                <option value="economy">Economy</option>
+              </select>
+              <button id="air-calc-btn" class="btn btn-outline-secondary d-inline-flex align-items-center" type="button">
+                Calculate
+                <svg class="bi ms-1" width="20" height="20">
+                  <use xlink:href="#arrow-right-short"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <h1 class="display-5 fw-bold text-body-emphasis">Calculator Results for Air Travel</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">
+          Messages
+        </p>
+        <p class="lead mb-4 result">
+          By flying from <span id="fromAirCodeRecieve">N/A</span> to <span id="toAirCodeRecieve">N/A</span> with <span id="airPassengerRecieve">0</span> passengers on <span id="flightClassRecieve">N/A</span> class, you have emmitted <span id="airTravelCo2num">0</span> kg of
+          CO2
+        </p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        </div>
+      </div>
+    </div>
+    <div class="px-4 py-5 front text-center">
+      <div class="form-container">
+        <form id="carbon-calc">
+          <div class="mb-3 row">
+            <label for="staticEmail" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+              <input type="text" readonly class="form-control-plaintext" id="staticEmail"
+                value="Electricity for Road Travel">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Passenger Number</label>
+            <div class="col-sm-10 d-flex">
+              <input type="text" class="form-control w-50" id="passengerNumRoad">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Distance(miles)</label>
+            <div class="col-sm-10 d-flex">
+              <input type="text" class="form-control w-50" id="distanceRoad">
+              <button id="road-calc-btn" class="btn btn-outline-secondary d-inline-flex align-items-center" type="button">
+                Calculate
+                <svg class="bi ms-1" width="20" height="20">
+                  <use xlink:href="#arrow-right-short"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <h1 class="display-5 fw-bold text-body-emphasis">Calculator Results for Road Travel</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">
+          Messages
+        </p>
+        <p class="lead mb-4 result">
+          By driving with <span id="passengerRoadRecieve">N/A</span> passengers for <span id="distanceRoadRecieve">N/A</span> miles, you have emmitted <span id="roadTravelCo2num">0</span> kg of
+          CO2
+        </p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        </div>
+      </div>
+    </div>
+    <div class="px-4 py-5 front text-center">
+      <div class="form-container">
+        <form id="carbon-calc">
+          <div class="mb-3 row">
+            <label for="staticEmail" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+              <input type="text" readonly class="form-control-plaintext" id="staticEmail"
+                value="Electricity for Sea Travel">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Passenger Number</label>
+            <div class="col-sm-10 d-flex">
+              <input type="text" class="form-control w-50" id="passengerNumSea">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Distance(miles)</label>
+            <div class="col-sm-10 d-flex">
+              <input type="text" class="form-control w-50" id="distanceSea">
+              <button id="sea-calc-btn" class="btn btn-outline-secondary d-inline-flex align-items-center" type="button">
+                Calculate
+                <svg class="bi ms-1" width="20" height="20">
+                  <use xlink:href="#arrow-right-short"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <h1 class="display-5 fw-bold text-body-emphasis">Calculator Results for Sea Travel</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">
+          Messages
+        </p>
+        <p class="lead mb-4 result">
+          By taking ferry with <span id="passengerSeaRecieve">N/A</span> passengers for <span id="distanceSeaRecieve">N/A</span> miles, you have emmitted <span id="seaTravelCo2num">0</span> kg of
+          CO2
+        </p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+<script src="scripts.js"></script>
+<script src="airTravel.js"></script>
+<script src="roadTravel.js"></script>
+<script src="seaTravel.js"></script>
+</html>
