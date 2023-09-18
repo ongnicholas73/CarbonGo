@@ -34,7 +34,7 @@ const getRoadTravel = () => {
             console.log(result);
             document.querySelector("#passengerRoadRecieve").textContent = passengerNumber;
             document.querySelector("#distanceRoadRecieve").textContent = distance;
-            document.querySelector("#roadTravelCo2num").textContent = Math.round(data.co2e * 100) / 100
+            document.querySelector("#roadTravelCo2num").textContent = Math.round(result.co2e * 100) / 100
         })
         .catch((error) => {
             console.error(error);
